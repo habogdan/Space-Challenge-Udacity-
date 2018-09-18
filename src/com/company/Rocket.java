@@ -2,28 +2,28 @@ package com.company;
 
 public class Rocket implements SpaceShip {
 
-    public boolean launch(boolean launch_status) {
-        if (launch_status)
-            return true;
-        else
-            return false;
+    public int cost;
+    public int weight;
+    public int max_weight;
+    public float launch_explosion;
+    public float land_explosion;
+
+    public boolean launch() {
+        return true;
     }
 
-    public boolean land(boolean land_status) {
-        if (land_status)
-            return true;
-        else
-            return false;
+    public boolean land() {
+        return true;
     }
 
     public boolean canCarry ( Item object){
-        if ( capacity <= object.weight)
+        if ( weight <= object.weight)
             return true;
         else
             return false;
     }
 
     public void carry ( Item object) {
-        capacity += object.weight;
+        weight += object.weight;
     }
 }
